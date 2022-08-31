@@ -13,6 +13,10 @@ test:
 	go test -v ./...
 
 example:
-	@export $(cat {{ENV_FILE}}) && go run ./cmd/emailapp/.
+	export TEMPLATE_FILE="asset/email_template.json" && \
+	export CUSTOMERS_FILE="asset/customers.csv" && \
+	export OUTPUT_FILE="asset/output_emails.json" && \
+	export ERRORS_FILE="asset/errors.csv" && \
+	go run ./cmd/emailapp/.
 
 ENV_FILE = "env.list"
