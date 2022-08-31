@@ -10,20 +10,20 @@ import (
 )
 
 type FileProcessor struct {
-	consumerCsvFileName      string
+	customerCsvFileName      string
 	templateJsonFileName     string
 	outputEmailsJsonFileName string
 	errorFileName            string
 }
 
 func NewFileProcessor(
-	consumerCsvFileName string,
+	customerCsvFileName string,
 	templateJsonFileName string,
 	outputEmailsJsonFileName string,
 	errorCsvFileName string,
 ) *FileProcessor {
 	return &FileProcessor{
-		consumerCsvFileName,
+		customerCsvFileName,
 		templateJsonFileName,
 		outputEmailsJsonFileName,
 		errorCsvFileName,
@@ -31,7 +31,7 @@ func NewFileProcessor(
 }
 
 func (fp *FileProcessor) ReadCustomers() ([]entity.Customer, error) {
-	in, err := os.Open(fp.consumerCsvFileName)
+	in, err := os.Open(fp.customerCsvFileName)
 	if err != nil {
 		fmt.Println("file_processor.read_customers.fail_open_csv_file", err)
 		return nil, err
