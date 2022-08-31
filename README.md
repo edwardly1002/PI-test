@@ -5,6 +5,7 @@ This is a toy project done when applying to PI.EXCHANGE. To be concise, this pro
 Please notice these information:
 - The input and output files are saved in `asset`
 - The parameters are defined in `env.list` which is then exported to be ENV variables for the program to use
+- The requirement document and technical design document are in `docs`
 ### Quick start
 ```
 make example
