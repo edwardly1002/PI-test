@@ -1,6 +1,6 @@
-# A toy project when applying to PI
+# PI.EXCHANGE application toy project
 ### Brief introduction
-This is a toy project done when applying to PI.exchange. To be concise, this project is used to generate emails from the predefined templates with a given list of customers.
+This is a toy project done when applying to PI.EXCHANGE. To be concise, this project is used to generate emails from the predefined templates with a given list of customers.
 
 Please notice these information:
 - The input and output files are saved in `asset`
