@@ -58,7 +58,7 @@ func (o *PlaceholderContentManager) SetCustomers(customers []entity.Customer) (e
 	return nil
 }
 
-func (o *PlaceholderContentManager) SetTemplate(template *entity.Template) (err error) {
-	o.template = *template
+func (o *PlaceholderContentManager) SetTemplate(template entity.Template) (err error) {
+	o.template = template
 	return nil
 }
