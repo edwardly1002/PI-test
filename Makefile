@@ -1,6 +1,6 @@
 all:
 	make build
-	./bin/myapp
+	./bin/emailapp
 
 build:
 	- mkdir bin
