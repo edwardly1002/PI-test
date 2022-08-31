@@ -3,4 +3,5 @@ services:
     build: .
     image: pitest
     env_file: env.list
-    volumes: .:/myapp
+    volumes:
+      - .:/myapp
