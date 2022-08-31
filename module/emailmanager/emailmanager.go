@@ -1,6 +1,7 @@
 package emailmanager
 
 import (
+	"errors"
 	"fmt"
 	"github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME/module/contentmanager"
 	"github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME/module/emailsender"
@@ -35,6 +36,10 @@ func (e *EmailManagerImp) ProcessAndSend() (err error) {
 		fmt.Println("email_manager.process_and_send.fail_read_inp")
 		return err
 	}
+	if customers == nil {
+		fmt.Println("email_manager.process_and_send.no_customers")
+		return errors.New("No customers from input")
+	}
 	err = e.contentManager.SetCustomers(customers)
 	if err != nil {
 		return err
@@ -45,7 +50,11 @@ func (e *EmailManagerImp) ProcessAndSend() (err error) {
 		fmt.Println("email_manager.process_and_send.fail_read_inp")
 		return err
 	}
-	err = e.contentManager.SetTemplate(template)
+	if template == nil {
+		fmt.Println("email_manager.process_and_send.no_template")
+		return errors.New("No template from input")
+	}
+	err = e.contentManager.SetTemplate(*template)
 	if err != nil {
 		return err
 	}
